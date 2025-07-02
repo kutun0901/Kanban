@@ -5,7 +5,7 @@ import { Login, Signup } from '../screens'
 
 const AuthRouter = () => {
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col">
                     <img src="" alt="" />
@@ -13,7 +13,7 @@ const AuthRouter = () => {
                 <div className="col content-center">
                     <BrowserRouter>
                         <Routes>
-                            <Route path='/' element={<Login />} />
+                            <Route path='/login' element={<Login />} />
                             <Route path='/sign-up' element={<Signup />} />
                         </Routes>
                     </BrowserRouter>

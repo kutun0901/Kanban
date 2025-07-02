@@ -19,7 +19,7 @@ const Login = () => {
   return (
     <>
       <Card style={{
-        width: '50%',
+        width: '60%',
       }}>
         <div className="text-center">
           <Title level={2}>Log in to your account</Title>
@@ -40,7 +40,7 @@ const Login = () => {
               message: 'Please enter your email!'
             }
           ]}>
-            <Input allowClear maxLength={100} type='email' />
+            <Input placeholder='Enter your email' allowClear maxLength={100} type='email' />
           </Form.Item>
 
           <Form.Item name='password' label='Password' rules={[
@@ -49,7 +49,7 @@ const Login = () => {
               message: 'Please enter your password!'
             }
           ]}>
-            <Input.Password maxLength={100}  />
+            <Input.Password placeholder='Enter your password' maxLength={100}  />
           </Form.Item>
         </Form>
         <div className="row">
@@ -62,7 +62,7 @@ const Login = () => {
             <Link to={'/'}>Forgot password</Link>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 mb-3">
           <Button onClick={() => form.submit()}
             type='primary'
             style={{
@@ -76,7 +76,7 @@ const Login = () => {
         <SocialLogin />
         <div className='mt-4 text-center'>
             <Space>
-              <Text>Don't have an account</Text>
+              <Text type='secondary'>Don't have an account</Text>
               <Link to={'/sign-up'}>Sign up</Link>
             </Space>
         </div>

@@ -23,8 +23,8 @@ const Signup = () => {
         width: '50%',
       }}>
         <div className="text-center">
-          <Title level={2}>Log in to your account</Title>
-          <Paragraph type='secondary'>Welcome back! Please enter your details</Paragraph>
+          <Title level={2}>Create an account</Title>
+          <Paragraph type='secondary'>Start your 30-day free trial</Paragraph>
 
 
         </div>
@@ -41,7 +41,7 @@ const Signup = () => {
               message: 'Please enter your name!'
             }
           ]}>
-            <Input allowClear/>
+            <Input placeholder='Enter your name' allowClear/>
           </Form.Item>
 
           <Form.Item name='email' label='Email' rules={[
@@ -50,7 +50,7 @@ const Signup = () => {
               message: 'Please enter your email!'
             }
           ]}>
-            <Input allowClear maxLength={100} type='email' />
+            <Input placeholder='Enter your email' allowClear maxLength={100} type='email' />
           </Form.Item>
 
           <Form.Item name='password' label='Password' rules={[
@@ -59,11 +59,11 @@ const Signup = () => {
               message: 'Please enter your password!'
             }
           ]}>
-            <Input.Password maxLength={100}  />
+            <Input.Password placeholder='Create password' maxLength={100}  />
           </Form.Item>
         </Form>
 
-        <div className="mt-4">
+        <div className="mt-4 mb-3">
           <Button onClick={() => form.submit()}
             type='primary'
             style={{
@@ -77,8 +77,8 @@ const Signup = () => {
         <SocialLogin />
         <div className='mt-4 text-center'>
             <Space>
-              <Text>Don't have an account</Text>
-              <Link to={'/sign-up'}>Sign up</Link>
+              <Text type='secondary'>Already have an account</Text>
+              <Link to={'/login'}>Log in</Link>
             </Space>
         </div>
       </Card>
