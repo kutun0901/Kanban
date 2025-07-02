@@ -1,9 +1,10 @@
-import { Button, Card, Checkbox, Form, Input, Typography } from 'antd'
+import { Button, Card, Checkbox, Form, Input, Space, Typography } from 'antd'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import SocialLogin from './components/SocialLogin';
 
 // antd ant design
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const Login = () => {
   const [form] = Form.useForm()
@@ -16,8 +17,10 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <Card>
+    <>
+      <Card style={{
+        width: '50%',
+      }}>
         <div className="text-center">
           <Title level={2}>Log in to your account</Title>
           <Paragraph type='secondary'>Welcome back! Please enter your details</Paragraph>
@@ -51,7 +54,9 @@ const Login = () => {
         </Form>
         <div className="row">
           <div className="col">
-            <Checkbox checked={isRemember} onChange={(val) => setIsRemember(val.target.checked)}>Remember</Checkbox>
+            <Checkbox checked={isRemember} onChange={(val) => setIsRemember(val.target.checked)}>
+              Remember for 30 days
+              </Checkbox>
           </div>
           <div className="col text-right">
             <Link to={'/'}>Forgot password</Link>
@@ -68,8 +73,15 @@ const Login = () => {
             Login
           </Button>
         </div>
+        <SocialLogin />
+        <div className='mt-4 text-center'>
+            <Space>
+              <Text>Don't have an account</Text>
+              <Link to={'/sign-up'}>Sign up</Link>
+            </Space>
+        </div>
       </Card>
-    </div>
+    </>
   )
 }
 
